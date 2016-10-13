@@ -1,0 +1,46 @@
+﻿{
+  "name" : "Dexterous Search Helper",
+  "version" : "1.1.1",
+  "manifest_version": 2,
+  "description" : "Help users web search when using Google search eninge.",
+  "background" : {   
+  },
+  "browser_action" :
+  {
+    "default_icon" : {
+      "19" : "kDDicon.png",
+      "38" : "kDDicon.png"
+    },
+    "default_title" : "搜尋輔助系統"
+	
+
+  },
+	"permissions" : [
+		"tabs",
+				
+		"https://www.google.com.tw/*", "https://140.116.39.177/*", "*://suggestqueries.google.com/complete/*"
+  ],
+  "content_scripts" : [
+    {
+     
+	  "matches": [ "https://www.google.com.tw/search?*"],
+      
+	  
+      "js" :["jquery-1.12.1.min.js",
+	  "jquery-2.2.4.min.js",
+	  "d3.v3.min.js",
+	  "d3.layout.cloud.js",
+	  "jquery-latest.min.js",
+	 
+	  "contentscript.js"],
+	  
+	  "css": ["tabs.css"],
+	  "run_at": "document_end"
+    }
+  ],
+  "icons" : {
+    "16" : "kDDicon.png",
+    "48" : "kDDicon.png",
+    "128" : "kDDicon.png"
+  }
+}
